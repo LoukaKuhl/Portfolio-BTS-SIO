@@ -2,6 +2,8 @@
 :root {
     --primary: #2563eb;
     --primary-dark: #1d4ed8;
+    --success: #10b981; /* Ajouté pour le bouton Tableau de synthèse */
+    --success-dark: #059669;
     --dark: #111827;
     --dark-soft: #1f2937;
     --bg: #f4f6f9;
@@ -108,6 +110,8 @@ header {
     border-radius: 2px;
     transition: 0.3s;
 }
+
+/* Correction de l'animation de la croix (liaison avec le JS via .burger.active) */
 .burger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .burger.active span:nth-child(2) { opacity: 0; }
 .burger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
