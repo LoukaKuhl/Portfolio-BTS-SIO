@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Louka Kuhl — Développeur SLAM | Portfolio BTS SIO</title>
-    <meta name="description" content="Portfolio de Louka Kuhl, étudiant en BTS SIO option SLAM au lycée Lurçat (Perpignan). Découvrez mon parcours, mes projets de développement et mes compétences.">
+    <meta name="description"
+        content="Portfolio de Louka Kuhl, étudiant en BTS SIO option SLAM au lycée Lurçat (Perpignan). Découvrez mon parcours, mes projets de développement et mes compétences.">
     <meta name="author" content="Louka Kuhl">
+
+    <!-- Open Graph (aperçu LinkedIn, WhatsApp, Discord…) -->
+    <meta property="og:title" content="Louka Kuhl — Développeur SLAM | Portfolio BTS SIO">
+    <meta property="og:description" content="Étudiant en BTS SIO option SLAM à Perpignan. Découvrez mes projets, compétences et mon stage chez Agence418.">
+    <meta property="og:image" content="img/photolouka.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
     <link rel="icon" href="img/photolouka.ico" type="image/x-icon">
 
-    <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
-    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap)" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css)">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+
+<body class="light">
+    <!-- Barre de progression de lecture -->
+    <div class="reading-progress" id="readingProgress"></div>
 
     <header>
         <div class="logo-container">
-            <img src="img/photolouka.jpg" alt="Photo de profil de Louka Kuhl">
+            <img src="img/photolouka.jpg" alt="Photo de profil de Louka Kuhl" width="56" height="56">
             <div class="logo-text">
                 <span class="name">Louka Kuhl</span>
                 <span class="title">Étudiant BTS SIO — SLAM</span>
@@ -30,12 +45,18 @@
             <span></span><span></span><span></span>
         </button>
 
+        <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+            <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+
         <nav class="nav-links" id="navLinks">
             <a href="#accueil">Accueil</a>
             <a href="#parcours">Parcours</a>
             <a href="#experience">Expérience</a>
+            <a href="#bilan">Bilan stage</a>
             <a href="#realisations">Réalisations</a>
             <a href="#competences">Compétences</a>
+            <a href="#langues">Langues</a>
             <a href="#formation">Formation</a>
             <a href="#veille">Veille</a>
             <a href="#contact">Contact</a>
@@ -59,7 +80,8 @@
                     <a href="assets/cv/cv_louka_kuhl.pdf" class="btn btn-primary" target="_blank" rel="noopener">
                         <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Télécharger mon CV
                     </a>
-                    <a href="assets/docs/Tableau_de_synthese_KUHL_Louka.pdf" class="btn btn-secondary" target="_blank" rel="noopener" style="background-color: #10b981; border-color: #10b981; color: white;">
+                    <a href="assets/docs/Tableau_de_synthese_KUHL_Louka.pdf" class="btn btn-success" target="_blank"
+                        rel="noopener">
                         <i class="fa-solid fa-table" aria-hidden="true"></i> Tableau de synthèse SIO
                     </a>
                     <a href="#contact" class="btn btn-secondary">
@@ -67,15 +89,41 @@
                     </a>
                 </div>
                 <div class="hero-socials">
-                    <a href="[github.com](https://github.com/LoukaKuhl)" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-                    <a href="[fr.linkedin.com](https://fr.linkedin.com/in/louka-kuhl-b79366385)" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
-                    <a href="mailto:loukakuhl.pro@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+                    <a href="https://github.com/LoukaKuhl" target="_blank" rel="noopener"
+                        aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                    <a href="https://fr.linkedin.com/in/louka-kuhl-b79366385" target="_blank"
+                        rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"
+                            aria-hidden="true"></i></a>
+                    <a href="mailto:loukakuhl.pro@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"
+                            aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS COMPTEUR -->
+        <section id="stats" class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item" data-target="5">
+                    <span class="stat-number-big" id="stat-projets">0</span>
+                    <span class="stat-label-big">Projets réalisés</span>
+                </div>
+                <div class="stat-item" data-target="60">
+                    <span class="stat-number-big" id="stat-commits">0</span>
+                    <span class="stat-label-big">Commits GitHub</span>
+                </div>
+                <div class="stat-item" data-target="6">
+                    <span class="stat-number-big" id="stat-certifs">0</span>
+                    <span class="stat-label-big">Certifications</span>
+                </div>
+                <div class="stat-item" data-target="2">
+                    <span class="stat-number-big" id="stat-stages">0</span>
+                    <span class="stat-label-big">Années de formation</span>
                 </div>
             </div>
         </section>
 
         <!-- PARCOURS -->
-        <section id="parcours">
+        <section id="parcours" class="fade-in-section">
             <p class="section-label">Mon parcours</p>
             <h2>Parcours</h2>
             <div class="parcours-container">
@@ -104,23 +152,26 @@
         </section>
 
         <!-- EXPÉRIENCE -->
-        <section id="experience">
+        <section id="experience" class="fade-in-section">
             <p class="section-label">Mon expérience</p>
             <h2>Expérience professionnelle</h2>
             <div class="formation-container">
                 <div class="formation-card" style="border-left: 4px solid #2563eb;">
-                    <div class="formation-icon" style="color: #2563eb;"><i class="fa-solid fa-code-branch" aria-hidden="true"></i></div>
+                    <div class="formation-icon" style="color: #2563eb;"><i class="fa-solid fa-code-branch"
+                            aria-hidden="true"></i></div>
                     <h3>Stagiaire Développeur Web / Mobile</h3>
                     <p><strong>Agence418</strong> – Le Soler</p>
                     <p><strong>2026 · Stage de 1ère année</strong></p>
-                    <p>Conception et développement de l'application CodeGrimoire. Modélisation de base de données, implémentation d'API, gestion du mode hors ligne et déploiement.</p>
+                    <p>Conception et développement de l'application CodeGrimoire. Modélisation de base de données,
+                        implémentation d'API, gestion du mode hors ligne et déploiement.</p>
                 </div>
                 <div class="formation-card">
                     <div class="formation-icon"><i class="fa-solid fa-laptop-medical" aria-hidden="true"></i></div>
                     <h3>Technicien réparation PC &amp; consoles</h3>
                     <p><strong>MEDIALINC</strong> – Argelès-sur-Mer</p>
                     <p><strong>2024 – 2025 · 3 semaines</strong></p>
-                    <p>Réparation PC et consoles, remplacement de composants, réinstallation Windows, suppression de virus.</p>
+                    <p>Réparation PC et consoles, remplacement de composants, réinstallation Windows, suppression de
+                        virus.</p>
                 </div>
                 <div class="formation-card">
                     <div class="formation-icon"><i class="fa-solid fa-blender" aria-hidden="true"></i></div>
@@ -134,20 +185,63 @@
                     <h3>Assistant technique</h3>
                     <p><strong>SOTRANASA</strong> – Perpignan</p>
                     <p><strong>2022 – 2023 · 1 mois</strong></p>
-                    <p>Schémas photovoltaïques, création d'étiquettes, reporting Power BI/Excel, intégration DICT et gestion GENSTOT.</p>
+                    <p>Schémas photovoltaïques, création d'étiquettes, reporting Power BI/Excel, intégration DICT et
+                        gestion GENSTOT.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BILAN DE STAGE -->
+        <section id="bilan" class="fade-in-section">
+            <p class="section-label">Retour d'expérience</p>
+            <h2>Bilan de stage</h2>
+            <p class="section-intro">Mon stage chez Agence418 — ce que j'ai appris, les défis rencontrés et ce que j'en retiens.</p>
+
+            <div class="bilan-grid">
+                <div class="bilan-card bilan-appris">
+                    <div class="bilan-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div>
+                    <h3>Ce que j'ai appris</h3>
+                    <ul>
+                        <li>Conception et déploiement d'une API REST complète en TypeScript/Express</li>
+                        <li>Gestion d'une base de données Supabase avec politiques RLS</li>
+                        <li>Mise en place d'un Service Worker pour le mode hors ligne (PWA)</li>
+                        <li>Déploiement via Docker sur une plateforme cloud (Render)</li>
+                        <li>Travail en autonomie sur un projet réel avec contraintes métier</li>
+                    </ul>
+                </div>
+                <div class="bilan-card bilan-defis">
+                    <div class="bilan-icon"><i class="fa-solid fa-mountain" aria-hidden="true"></i></div>
+                    <h3>Difficultés rencontrées</h3>
+                    <ul>
+                        <li>Prise en main de TypeScript strict en conditions réelles</li>
+                        <li>Gestion des conflits de cache avec le Service Worker</li>
+                        <li>Configuration Docker multi-stage pour optimiser la taille de l'image</li>
+                        <li>Sécurisation des routes API avec les politiques RLS de Supabase</li>
+                    </ul>
+                </div>
+                <div class="bilan-card bilan-retiens">
+                    <div class="bilan-icon"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i></div>
+                    <h3>Ce que je referais différemment</h3>
+                    <ul>
+                        <li>Rédiger les tests unitaires dès le début du développement</li>
+                        <li>Mieux documenter l'API dès la conception (Swagger/OpenAPI)</li>
+                        <li>Prévoir plus tôt la stratégie de cache offline</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- RÉALISATIONS -->
-        <section id="realisations">
+        <section id="realisations" class="fade-in-section">
             <p class="section-label">Mes projets</p>
             <h2>Réalisations</h2>
             <p class="section-intro">Projets réalisés dans le cadre de ma formation en BTS SIO option SLAM.</p>
 
             <div style="text-align: center; margin-bottom: 40px;">
-                <p style="margin-bottom: 10px; color: #4b5563;">Retrouvez la matrice de mes compétences obligatoires :</p>
-                <a href="assets/docs/Tableau_de_synthese_KUHL_Louka.pdf" class="btn-projet" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; background-color: transparent; color: #10b981; border: 2px solid #10b981; padding: 10px 20px; font-weight: 600; text-decoration: none; border-radius: 6px;">
+                <p style="margin-bottom: 10px; color: #4b5563;">Retrouvez la matrice de mes compétences obligatoires :
+                </p>
+                <a href="assets/docs/Tableau_de_synthese_KUHL_Louka.pdf" class="btn-outline-success" target="_blank"
+                    rel="noopener">
                     <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Consulter mon Tableau de Synthèse (PDF)
                 </a>
             </div>
@@ -156,7 +250,7 @@
                 <!-- Projet 1 : Portfolio -->
                 <article class="realisations-card">
                     <div class="card-img-wrap">
-                        <img src="img/portfolio_thumb.jpg" alt="Aperçu du site portfolio personnel" loading="lazy">
+                        <img src="img/portfolio_thumb.jpg" alt="Aperçu du site portfolio personnel" loading="lazy" width="360" height="180">
                     </div>
                     <div class="card-body">
                         <div class="card-header">
@@ -177,8 +271,9 @@
                             Structuration sémantique HTML &middot; mise en page responsive (Flexbox/Grid) &middot;
                             organisation claire du contenu
                         </p>
-                        
-                        <div style="margin-top: 15px; display: inline-flex; align-items: center; gap: 8px; color: #2563eb; background-color: rgba(37, 99, 235, 0.1); padding: 8px 16px; border-radius: 8px; font-weight: 500; font-size: 0.9rem;">
+
+                        <div
+                            style="margin-top: 15px; display: inline-flex; align-items: center; gap: 8px; color: #2563eb; background-color: rgba(37, 99, 235, 0.1); padding: 8px 16px; border-radius: 8px; font-weight: 500; font-size: 0.9rem;">
                             <i class="fa-solid fa-eye fa-bounce" aria-hidden="true"></i> Projet en cours de consultation
                         </div>
                     </div>
@@ -187,7 +282,7 @@
                 <!-- Projet 2 : CodeGrimoire -->
                 <article class="realisations-card">
                     <div class="card-img-wrap">
-                        <img src="img/codegrimoire_thumb.jpg" alt="Aperçu de l'application CodeGrimoire" loading="lazy">
+                        <img src="img/codegrimoire_thumb.jpg" alt="Aperçu de l'application CodeGrimoire" loading="lazy" width="360" height="180">
                     </div>
                     <div class="card-body">
                         <div class="card-header">
@@ -201,18 +296,80 @@
                             <span class="tag">PWA</span>
                         </div>
                         <p>
-                            Développement d'une application web privée (bloc-notes) permettant de stocker et rechercher efficacement des snippets de code, réalisée lors de mon stage chez Agence418.
+                            Développement d'une application web privée (bloc-notes) permettant de stocker et rechercher
+                            efficacement des snippets de code, réalisée lors de mon stage chez Agence418.
                         </p>
                         <p class="competences-mobilisees">
                             <strong>Compétences mobilisées :</strong><br>
-                            Création d'une API REST, sécurisation des données (RLS policies), 
+                            Création d'une API REST, sécurisation des données (RLS policies),
                             mise en place d'un Service Worker (mode hors ligne) et déploiement via Docker sur Render.
                         </p>
-                        <div class="card-actions" style="display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap;">
-                            <a href="[codegrimoire-frontend.onrender.com](https://codegrimoire-frontend.onrender.com/)" class="btn-projet" target="_blank" rel="noopener" style="margin-top: 0;">
+
+                        <details class="project-details">
+                            <summary>
+                                <span class="summary-title">
+                                    <i class="fa-solid fa-book-skull"></i>
+                                    Découvrir le projet CodeGrimoire
+                                </span>
+                                <span class="summary-badge">Projet BTS SIO</span>
+                            </summary>
+
+                            <div class="project-content">
+
+                                <p>
+                                    <strong>CodeGrimoire</strong> est une application centralisée développée
+                                    durant mon stage chez Agence418. Son objectif est de permettre aux
+                                    développeurs de regrouper, organiser et retrouver facilement leurs
+                                    snippets de code ainsi que leurs notes techniques.
+                                </p>
+
+                                <div class="project-stats">
+                                    <div class="stat-card">
+                                        <span class="stat-number">60+</span>
+                                        <span class="stat-label">Commits GitHub</span>
+                                    </div>
+
+                                    <div class="stat-card">
+                                        <span class="stat-number">#</span>
+                                        <span class="stat-label">Recherche par tags</span>
+                                    </div>
+
+                                    <div class="stat-card">
+                                        <span class="stat-number">∞</span>
+                                        <span class="stat-label">Snippets enregistrables</span>
+                                    </div>
+                                </div>
+
+                                <h4>Fonctionnalités principales</h4>
+
+                                <ul class="project-list">
+                                    <li>Ajout et modification de snippets de code</li>
+                                    <li>Classement par catégories et tags</li>
+                                    <li>Recherche instantanée</li>
+                                    <li>Documentation technique associée</li>
+                                    <li>Synchronisation avec la base de données</li>
+                                    <li>Historique de développement sur GitHub</li>
+                                </ul>
+
+                                <div class="tech-badges">
+                                    <span class="tech ts">TypeScript</span>
+                                    <span class="tech node">Node.js</span>
+                                    <span class="tech express">Express</span>
+                                    <span class="tech supabase">Supabase</span>
+                                    <span class="tech docker">Docker</span>
+                                    <span class="tech git">Git</span>
+                                </div>
+
+                            </div>
+                        </details>
+
+                        <div class="card-actions">
+                            <a href="https://codegrimoire-frontend.onrender.com/"
+                                class="btn-projet" target="_blank" rel="noopener">
                                 <i class="fa-solid fa-globe" aria-hidden="true"></i> Tester l'application
                             </a>
-                            <a href="[github.com](https://github.com/LoukaKuhl/CodeGrimoire)" class="btn-projet" target="_blank" rel="noopener" style="margin-top: 0; background: none; color: #2563eb; border: 1px solid #2563eb;">
+                            <a href="https://github.com/LoukaKuhl/CodeGrimoire" class="btn-projet btn-outline"
+                                target="_blank" rel="noopener">
                                 <i class="fa-brands fa-github" aria-hidden="true"></i> Code source
                             </a>
                         </div>
@@ -221,7 +378,8 @@
 
                 <!-- Projet 3 : Générateur de Mots de Passe -->
                 <article class="realisations-card">
-                    <div class="card-img-wrap" style="display: flex; align-items: center; justify-content: center; background: #f3f4f6; height: 200px; color: #2563eb; font-size: 3.5rem;">
+                    <div class="card-img-wrap"
+                        style="display: flex; align-items: center; justify-content: center; background: #f3f4f6; height: 200px; color: #2563eb; font-size: 3.5rem;">
                         <i class="fa-solid fa-lock" aria-hidden="true"></i>
                     </div>
                     <div class="card-body">
@@ -235,14 +393,19 @@
                             <span class="tag">Cryptographie</span>
                         </div>
                         <p>
-                            Développement d'une application de bureau permettant de générer des clés de sécurité hautement robustes et personnalisables (longueur, caractères spéciaux, majuscules, chiffres) répondant aux normes de la CNIL.
+                            Développement d'une application de bureau permettant de générer des clés de sécurité
+                            hautement robustes et personnalisables (longueur, caractères spéciaux, majuscules, chiffres)
+                            répondant aux normes de la CNIL.
                         </p>
                         <p class="competences-mobilisees">
                             <strong>Compétences mobilisées :</strong><br>
-                            Manipulation des bibliothèques de génération pseudo-aléatoire &middot; création d'interfaces graphiques (GUI) avec Tkinter &middot; application des règles algorithmiques de complexité cyber.
+                            Manipulation des bibliothèques de génération pseudo-aléatoire &middot; création d'interfaces
+                            graphiques (GUI) avec Tkinter &middot; application des règles algorithmiques de complexité
+                            cyber.
                         </p>
-                        <div class="card-actions" style="display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap;">
-                            <a href="[github.com](https://github.com/LoukaKuhl/TP-Generateur-MDP)" class="btn-projet" target="_blank" rel="noopener" style="margin-top: 0; background: none; color: #2563eb; border: 1px solid #2563eb;">
+                        <div class="card-actions">
+                            <a href="https://github.com/LoukaKuhl/TP-Generateur-MDP" class="btn-projet btn-outline"
+                                target="_blank" rel="noopener">
                                 <i class="fa-brands fa-github" aria-hidden="true"></i> Code source
                             </a>
                         </div>
@@ -251,7 +414,8 @@
 
                 <!-- Projet 4 : Validateur de Numéros Sécu -->
                 <article class="realisations-card">
-                    <div class="card-img-wrap" style="display: flex; align-items: center; justify-content: center; background: #f3f4f6; height: 200px; color: #2563eb; font-size: 3.5rem;">
+                    <div class="card-img-wrap"
+                        style="display: flex; align-items: center; justify-content: center; background: #f3f4f6; height: 200px; color: #2563eb; font-size: 3.5rem;">
                         <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
                     </div>
                     <div class="card-body">
@@ -265,14 +429,19 @@
                             <span class="tag">RegEx</span>
                         </div>
                         <p>
-                            Conception d'un programme d'analyse et de vérification de la validité des numéros de sécurité sociale (NIR). L'application extrait le sexe, le lieu et l'année de naissance, et recalcule la clé de contrôle (modulo 97).
+                            Conception d'un programme d'analyse et de vérification de la validité des numéros de
+                            sécurité sociale (NIR). L'application extrait le sexe, le lieu et l'année de naissance, et
+                            recalcule la clé de contrôle (modulo 97).
                         </p>
                         <p class="competences-mobilisees">
                             <strong>Compétences mobilisées :</strong><br>
-                            Utilisation des expressions régulières (RegEx) pour le contrôle de saisie &middot; implémentation de formules mathématiques de validation &middot; traitement de chaînes de caractères complexes.
+                            Utilisation des expressions régulières (RegEx) pour le contrôle de saisie &middot;
+                            implémentation de formules mathématiques de validation &middot; traitement de chaînes de
+                            caractères complexes.
                         </p>
-                        <div class="card-actions" style="display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap;">
-                            <a href="[github.com](https://github.com/LoukaKuhl/TP-Securite-Sociale)" class="btn-projet" target="_blank" rel="noopener" style="margin-top: 0; background: none; color: #2563eb; border: 1px solid #2563eb;">
+                        <div class="card-actions">
+                            <a href="https://github.com/LoukaKuhl/TP-Securite-Sociale" class="btn-projet btn-outline"
+                                target="_blank" rel="noopener">
                                 <i class="fa-brands fa-github" aria-hidden="true"></i> Code source
                             </a>
                         </div>
@@ -283,8 +452,9 @@
                 <article class="realisations-card">
                     <div class="card-img-wrap">
                         <!-- Remplacez l'image par la vignette de votre projet si disponible -->
-                        <img src="img/pokemon_kanto_thumb.jpg" alt="Aperçu de l'application Pokémon Kanto" loading="lazy" onerror="this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.background='#f3f4f6';this.parentElement.style.height='200px';this.parentElement.style.color='#2563eb';this.parentElement.style.fontSize='3.5rem';this.remove();this.parentElement.innerHTML='<i class=&quot;fa-solid fa-gamepad&quot; aria-hidden=&quot;true&quot;></i>';">
-                    </div>
+                        <img src="img/pokemon_kanto_thumb.jpg" alt="Aperçu de l'application Pokémon Kanto"
+                            loading="lazy" width="360" height="180"
+                            onerror="this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.background='#f3f4f6';this.parentElement.style.height='200px';this.parentElement.style.color='#2563eb';this.parentElement.style.fontSize='3.5rem';this.remove();this.parentElement.innerHTML='<i class=&quot;fa-solid fa-gamepad&quot; aria-hidden=&quot;true&quot;></i>';">                    </div>
                     <div class="card-body">
                         <div class="card-header">
                             <h3>Pokémon Kanto</h3>
@@ -296,18 +466,18 @@
                             <span class="tag">Fichiers / I/O</span>
                         </div>
                         <p>
-                            Application éducative autour du Pokédex de Kanto : chargement de données, filtrage, recherche et affichage des caractéristiques des Pokémon avec gestion d'objets et collections en Java.
+                            Application éducative autour du Pokédex de Kanto : chargement de données, filtrage,
+                            recherche et affichage des caractéristiques des Pokémon avec gestion d'objets et collections
+                            en Java.
                         </p>
                         <p class="competences-mobilisees">
                             <strong>Compétences mobilisées :</strong><br>
-                            Conception orientée objet (classes, héritage) &middot; manipulation de fichiers (CSV/JSON) &middot; structures de données (List/Map) &middot; tests unitaires de base.
+                            Conception orientée objet (classes, héritage) &middot; manipulation de fichiers (CSV/JSON)
+                            &middot; structures de données (List/Map) &middot; tests unitaires de base.
                         </p>
-                        <div class="card-actions" style="display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap;">
-                            <!-- Si vous avez des liens, décommentez et ajustez -->
-                            <!-- <a href="[votre-demo](https://votre-demo)" class="btn-projet" target="_blank" rel="noopener">
-                                <i class="fa-solid fa-globe" aria-hidden="true"></i> Démo
-                            </a> -->
-                            <a href="[github.com](https://github.com/LoukaKuhl/Pokemon-Kanto)" class="btn-projet" target="_blank" rel="noopener" style="background: none; color: #2563eb; border: 1px solid #2563eb;">
+                        <div class="card-actions">
+                            <a href="https://github.com/LoukaKuhl/Pokemon-Kanto" class="btn-projet btn-outline"
+                                target="_blank" rel="noopener">
                                 <i class="fa-brands fa-github" aria-hidden="true"></i> Code source
                             </a>
                         </div>
@@ -317,69 +487,132 @@
         </section>
 
         <!-- COMPÉTENCES -->
-        <section id="competences">
+        <section id="competences" class="fade-in-section">
             <p class="section-label">Mon savoir-faire</p>
             <h2>Compétences &amp; Aptitudes</h2>
-            <p class="section-intro">Découvrez l'ensemble de mes compétences techniques, méthodologiques et humaines.</p>
+            <p class="section-intro">Découvrez l'ensemble de mes compétences techniques, méthodologiques et humaines.
+            </p>
 
             <div class="competences-grid">
                 <div class="competences-col">
-                    <h3 class="competences-col-title"><i class="fa-solid fa-code" aria-hidden="true"></i> Langages &amp; développement</h3>
+                    <h3 class="competences-col-title"><i class="fa-solid fa-code" aria-hidden="true"></i> Langages &amp;
+                        développement</h3>
 
                     <div class="skill">
-                        <span>Python</span>
-                        <div class="progress"><div class="progress-bar" style="--progress-width:50%;"></div></div>
+                        <div class="skill-header">
+                            <span>Python</span>
+                            <span class="skill-level level-inter">Intermédiaire</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="--progress-width:50%;"></div>
+                        </div>
                     </div>
                     <div class="skill">
-                        <span>HTML5 / CSS3</span>
-                        <div class="progress"><div class="progress-bar" style="--progress-width:65%;"></div></div>
+                        <div class="skill-header">
+                            <span>HTML5 / CSS3</span>
+                            <span class="skill-level level-inter">Intermédiaire</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="--progress-width:65%;"></div>
+                        </div>
                     </div>
                     <div class="skill">
-                        <span>SQL (MySQL / PostgreSQL)</span>
-                        <div class="progress"><div class="progress-bar" style="--progress-width:55%;"></div></div>
+                        <div class="skill-header">
+                            <span>SQL (MySQL / PostgreSQL)</span>
+                            <span class="skill-level level-inter">Intermédiaire</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="--progress-width:55%;"></div>
+                        </div>
                     </div>
                     <div class="skill">
-                        <span>Java</span>
-                        <div class="progress"><div class="progress-bar" style="--progress-width:35%;"></div></div>
+                        <div class="skill-header">
+                            <span>Java</span>
+                            <span class="skill-level level-debutant">Débutant</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="--progress-width:35%;"></div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="competences-col">
-                    <h3 class="competences-col-title"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Outils &amp; logiciels</h3>
+                    <h3 class="competences-col-title"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                        Outils &amp; logiciels</h3>
                     <div class="tools-grid">
-                        <span class="tool-badge"><i class="fa-brands fa-git-alt" aria-hidden="true"></i> Git / GitHub</span>
-                        <span class="tool-badge"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> VS Code</span>
-                        <span class="tool-badge"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i> Eclipse (Java)</span>
+                        <span class="tool-badge"><i class="fa-brands fa-git-alt" aria-hidden="true"></i> Git /
+                            GitHub</span>
+                        <span class="tool-badge"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> VS
+                            Code</span>
+                        <span class="tool-badge"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i> Eclipse
+                            (Java)</span>
                         <span class="tool-badge"><i class="fa-solid fa-database" aria-hidden="true"></i> Supabase</span>
                         <span class="tool-badge"><i class="fa-solid fa-file-excel" aria-hidden="true"></i> Excel</span>
-                        <span class="tool-badge"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> Power BI</span>
+                        <span class="tool-badge"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> Power
+                            BI</span>
                     </div>
                 </div>
 
                 <div class="competences-col">
-                    <h3 class="competences-col-title"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Méthodes &amp; Conception</h3>
+                    <h3 class="competences-col-title"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                        Méthodes &amp; Conception</h3>
                     <div class="tools-grid">
-                        <span class="tool-badge"><i class="fa-solid fa-sitemap" aria-hidden="true"></i> Modélisation (Merise / MCD)</span>
-                        <span class="tool-badge"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Gestion de projet (Kanban / Trello)</span>
-                        <span class="tool-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Normes CNIL &amp; RGPD</span>
-                        <span class="tool-badge"><i class="fa-solid fa-bug-slash" aria-hidden="true"></i> Diagnostic &amp; Débogage</span>
+                        <span class="tool-badge"><i class="fa-solid fa-sitemap" aria-hidden="true"></i> Modélisation
+                            (Merise / MCD)</span>
+                        <span class="tool-badge"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Gestion de
+                            projet (Kanban / Trello)</span>
+                        <span class="tool-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Normes
+                            CNIL &amp; RGPD</span>
+                        <span class="tool-badge"><i class="fa-solid fa-bug-slash" aria-hidden="true"></i> Diagnostic
+                            &amp; Débogage</span>
                     </div>
                 </div>
 
                 <div class="competences-col">
-                    <h3 class="competences-col-title"><i class="fa-solid fa-users" aria-hidden="true"></i> Compétences Humaines</h3>
+                    <h3 class="competences-col-title"><i class="fa-solid fa-users" aria-hidden="true"></i> Compétences
+                        Humaines</h3>
                     <div class="tools-grid">
-                        <span class="tool-badge"><i class="fa-solid fa-people-group" aria-hidden="true"></i> Travail en équipe</span>
-                        <span class="tool-badge"><i class="fa-solid fa-brain" aria-hidden="true"></i> Autonomie &amp; Curiosité</span>
-                        <span class="tool-badge"><i class="fa-solid fa-check-double" aria-hidden="true"></i> Rigueur &amp; Organisation</span>
-                        <span class="tool-badge"><i class="fa-solid fa-comments" aria-hidden="true"></i> Écoute active des besoins</span>
+                        <span class="tool-badge"><i class="fa-solid fa-people-group" aria-hidden="true"></i> Travail en
+                            équipe</span>
+                        <span class="tool-badge"><i class="fa-solid fa-brain" aria-hidden="true"></i> Autonomie &amp;
+                            Curiosité</span>
+                        <span class="tool-badge"><i class="fa-solid fa-check-double" aria-hidden="true"></i> Rigueur
+                            &amp; Organisation</span>
+                        <span class="tool-badge"><i class="fa-solid fa-comments" aria-hidden="true"></i> Écoute active
+                            des besoins</span>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- LANGUES -->
+        <section id="langues" class="fade-in-section">
+            <p class="section-label">Communication</p>
+            <h2>Langues</h2>
+            <div class="langues-grid">
+                <div class="langue-card">
+                    <div class="langue-flag">🇫🇷</div>
+                    <h3>Français</h3>
+                    <p class="langue-niveau">Langue maternelle</p>
+                    <div class="langue-bar">
+                        <div class="langue-fill" style="--lang-width: 100%;"></div>
+                    </div>
+                    <p class="langue-desc">Expression écrite et orale courante, rédaction technique de documentation.</p>
+                </div>
+                <div class="langue-card">
+                    <div class="langue-flag">🇬🇧</div>
+                    <h3>Anglais</h3>
+                    <p class="langue-niveau">Niveau B1 — Intermédiaire</p>
+                    <div class="langue-bar">
+                        <div class="langue-fill" style="--lang-width: 55%;"></div>
+                    </div>
+                    <p class="langue-desc">Lecture de documentation technique, compréhension de tutoriels et forums (Stack Overflow, MDN).</p>
+                </div>
+            </div>
+        </section>
+
         <!-- FORMATION -->
-        <section id="formation">
+        <section id="formation" class="fade-in-section">
             <p class="section-label">Mes diplômes</p>
             <h2>Formation &amp; Certifications</h2>
             <div class="formation-container">
@@ -388,7 +621,8 @@
                     <h3>BTS SIO – SLAM</h3>
                     <p><strong>Établissement :</strong> Lycée Lurçat – Perpignan</p>
                     <p><strong>Période :</strong> 2024 – 2026</p>
-                    <p>Développement d'applications, gestion de bases de données et conception de solutions informatiques.</p>
+                    <p>Développement d'applications, gestion de bases de données et conception de solutions
+                        informatiques.</p>
                 </div>
                 <div class="formation-card">
                     <div class="formation-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
@@ -397,53 +631,67 @@
                     <p><strong>Période :</strong> 2023 – 2024</p>
                     <p>Réseaux informatiques, systèmes communicants et infrastructures numériques.</p>
                 </div>
-                
+
                 <div class="formation-card" style="border-left: 4px solid #10b981;">
-                    <div class="formation-icon" style="color: #10b981;"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+                    <div class="formation-icon" style="color: #10b981;"><i class="fa-solid fa-shield-halved"
+                            aria-hidden="true"></i></div>
                     <h3>Certification ANSSI</h3>
                     <p><strong>Organisme :</strong> SecNumAcadémie</p>
                     <p>Initiation complète à la cybersécurité, sécurité du poste de travail et navigation sécurisée.</p>
-                    <a href="img/Certif/Certif_ANSSI.jpg" class="btn-projet" target="_blank" rel="noopener" style="margin-top: 15px; font-size: 0.85rem; padding: 6px 12px; display: inline-flex; align-items: center; gap: 5px;">
+                    <a href="img/Certif/Certif_ANSSI.jpg" class="btn-projet" target="_blank" rel="noopener"
+                        style="margin-top: 15px; font-size: 0.85rem; padding: 6px 12px; display: inline-flex; align-items: center; gap: 5px;">
                         <i class="fa-solid fa-image" aria-hidden="true"></i> Voir le diplôme
                     </a>
                 </div>
 
                 <div class="formation-card" style="border-left: 4px solid #10b981;">
-                    <div class="formation-icon" style="color: #10b981;"><i class="fa-solid fa-user-shield" aria-hidden="true"></i></div>
+                    <div class="formation-icon" style="color: #10b981;"><i class="fa-solid fa-user-shield"
+                            aria-hidden="true"></i></div>
                     <h3>Certification CNIL</h3>
                     <p><strong>Organisme :</strong> Atelier RGPD</p>
-                    <p>Maîtrise des principes fondamentaux du RGPD, de la protection et de la conformité des données personnelles.</p>
-                    <a href="img/Certif/Certificat_CNIL.pdf" class="btn-projet" target="_blank" rel="noopener" style="margin-top: 15px; font-size: 0.85rem; padding: 6px 12px; display: inline-flex; align-items: center; gap: 5px;">
+                    <p>Maîtrise des principes fondamentaux du RGPD, de la protection et de la conformité des données
+                        personnelles.</p>
+                    <a href="img/Certif/Certificat_CNIL.pdf" class="btn-projet" target="_blank" rel="noopener"
+                        style="margin-top: 15px; font-size: 0.85rem; padding: 6px 12px; display: inline-flex; align-items: center; gap: 5px;">
                         <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Visionner le PDF
                     </a>
                 </div>
 
                 <div class="formation-card" style="border-left: 4px solid #10b981;">
-                    <div class="formation-icon" style="color: #10b981;"><i class="fa-brands fa-python" aria-hidden="true"></i></div>
+                    <div class="formation-icon" style="color: #10b981;"><i class="fa-brands fa-python"
+                            aria-hidden="true"></i></div>
                     <h3>Certification Python</h3>
                     <p><strong>Organisme :</strong> OpenClassrooms</p>
-                    <p>Apprentissage des bases de la programmation, manipulation des structures de données et logique algorithmique sous Python.</p>
-                    <a href="img/Certif/Certif_Python.png" class="btn-projet" target="_blank" rel="noopener" style="margin-top: 15px; font-size: 0.85rem; padding: 6px 12px; display: inline-flex; align-items: center; gap: 5px;">
+                    <p>Apprentissage des bases de la programmation, manipulation des structures de données et logique
+                        algorithmique sous Python.</p>
+                    <a href="img/Certif/Certif_Python.png" class="btn-projet" target="_blank" rel="noopener"
+                        style="margin-top: 15px; font-size: 0.85rem; padding: 6px 12px; display: inline-flex; align-items: center; gap: 5px;">
                         <i class="fa-solid fa-image" aria-hidden="true"></i> Voir l'attestation
                     </a>
                 </div>
 
                 <div class="formation-card" style="border-left: 4px solid #10b981;">
-                    <div class="formation-icon" style="color: #10b981;"><i class="fa-solid fa-lock" aria-hidden="true"></i></div>
+                    <div class="formation-icon" style="color: #10b981;"><i class="fa-solid fa-lock"
+                            aria-hidden="true"></i></div>
                     <h3>Certification Cybersécurité</h3>
                     <p><strong>Organisme :</strong> OpenClassrooms</p>
-                    <p>Sensibilisation aux enjeux de la sécurité numérique, identification des cybermenaces et protection des infrastructures logicielles.</p>
-                    <a href="img/Certif/Certif_Cybersécurité.png" class="btn-projet" target="_blank" rel="noopener" style="margin-top: 15px; font-size: 0.85rem; padding: 6px 12px; display: inline-flex; align-items: center; gap: 5px;">
+                    <p>Sensibilisation aux enjeux de la sécurité numérique, identification des cybermenaces et
+                        protection des infrastructures logicielles.</p>
+                    <a href="img/Certif/Certif_Cybersécurité.png" class="btn-projet" target="_blank" rel="noopener"
+                        style="margin-top: 15px; font-size: 0.85rem; padding: 6px 12px; display: inline-flex; align-items: center; gap: 5px;">
                         <i class="fa-solid fa-image" aria-hidden="true"></i> Voir l'attestation
                     </a>
                 </div>
 
                 <div class="formation-card" style="border-left: 4px solid #10b981;">
-                    <div class="formation-icon" style="color: #10b981;"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+                    <div class="formation-icon" style="color: #10b981;"><i class="fa-solid fa-code"
+                            aria-hidden="true"></i></div>
                     <h3>Certification HTML5 &amp; CSS3</h3>
                     <p><strong>Organisme :</strong> OpenClassrooms</p>
-                    <p>Maîtrise des standards du web, intégration de maquettes responsives, structuration sémantique et mise en forme CSS moderne.</p>
-                    <a href="img/Certif/Certif_HTML&amp;CSS.png" class="btn-projet" target="_blank" rel="noopener" style="margin-top: 15px; font-size: 0.85rem; padding: 6px 12px; display: inline-flex; align-items: center; gap: 5px;">
+                    <p>Maîtrise des standards du web, intégration de maquettes responsives, structuration sémantique et
+                        mise en forme CSS moderne.</p>
+                    <a href="img/Certif/Certif_HTML&amp;CSS.png" class="btn-projet" target="_blank" rel="noopener"
+                        style="margin-top: 15px; font-size: 0.85rem; padding: 6px 12px; display: inline-flex; align-items: center; gap: 5px;">
                         <i class="fa-solid fa-image" aria-hidden="true"></i> Voir l'attestation
                     </a>
                 </div>
@@ -451,14 +699,16 @@
         </section>
 
         <!-- VEILLE -->
-        <section id="veille">
+        <section id="veille" class="fade-in-section">
             <p class="section-label">Se tenir informé</p>
             <h2>Veille Technologique</h2>
 
             <div class="veille-intro">
                 <h3>Qu'est-ce que la veille technologique ?</h3>
                 <p>
-                    La veille technologique consiste à surveiller régulièrement les nouveautés, les évolutions techniques et l'émergence de nouveaux outils afin de maintenir mes compétences à jour et de proposer des architectures logicielles modernes et sécurisées.
+                    La veille technologique consiste à surveiller régulièrement les nouveautés, les évolutions
+                    techniques et l'émergence de nouveaux outils afin de maintenir mes compétences à jour et de proposer
+                    des architectures logicielles modernes et sécurisées.
                 </p>
             </div>
 
@@ -466,34 +716,45 @@
                 <h3>Méthodologie &amp; Outils de collecte</h3>
                 <p>Pour structurer ma veille de manière efficace, j'utilise un écosystème d'outils professionnels :</p>
                 <ul>
-                    <li><strong>Agrégateurs de flux (Feedly) :</strong> Pour centraliser les articles de blogs d'ingénieurs techniques.</li>
-                    <li><strong>Plateformes communautaires :</strong> Suivi des tendances sur GitHub Explore, Dev.to, et Medium (Tech blogs).</li>
+                    <li><strong>Agrégateurs de flux (Feedly) :</strong> Pour centraliser les articles de blogs
+                        d'ingénieurs techniques.</li>
+                    <li><strong>Plateformes communautaires :</strong> Suivi des tendances sur GitHub Explore, Dev.to, et
+                        Medium (Tech blogs).</li>
                     <li><strong>Newsletters spécialisées :</strong> JavaScript Weekly, Node Weekly et TLDR Web Dev.</li>
                 </ul>
             </div>
 
             <div class="veille-sujet">
                 <h3>Sujet de ma veille</h3>
-                <p>Thématique principale : <strong>L'écosystème JavaScript Moderne (Back-end &amp; Cloud) et les architectures d'applications décentralisées</strong></p>
+                <p>Thématique principale : <strong>L'écosystème JavaScript Moderne (Back-end &amp; Cloud) et les
+                        architectures d'applications décentralisées</strong></p>
                 <p>Ma veille s'articule autour de deux axes stratégiques liés à mes projets de stage :</p>
             </div>
 
             <div class="veille-themes-grid">
                 <div class="veille-theme">
-                    <h4><i class="fa-solid fa-server" aria-hidden="true"></i> Thème 1 : Évolutions de Node.js et du Back-end TypeScript</h4>
+                    <h4><i class="fa-solid fa-server" aria-hidden="true"></i> Thème 1 : Évolutions de Node.js et du
+                        Back-end TypeScript</h4>
                     <ul>
-                        <li><strong>TypeScript :</strong> Suivi des mises à jour du langage pour sécuriser le typage des API (<em>Dev.to / TypeScript Blog</em>).</li>
-                        <li><strong>Frameworks &amp; APIs :</strong> Évolution des performances d'Express et alternatives émergentes (Fastify, NestJS).</li>
-                        <li><strong>Bases de données BaaS :</strong> L'essor de Supabase et l'intégration des politiques de sécurité de niveau ligne (RLS) avec PostgreSQL.</li>
+                        <li><strong>TypeScript :</strong> Suivi des mises à jour du langage pour sécuriser le typage des
+                            API (<em>Dev.to / TypeScript Blog</em>).</li>
+                        <li><strong>Frameworks &amp; APIs :</strong> Évolution des performances d'Express et
+                            alternatives émergentes (Fastify, NestJS).</li>
+                        <li><strong>Bases de données BaaS :</strong> L'essor de Supabase et l'intégration des politiques
+                            de sécurité de niveau ligne (RLS) avec PostgreSQL.</li>
                     </ul>
                 </div>
 
                 <div class="veille-theme">
-                    <h4><i class="fa-solid fa-cubes" aria-hidden="true"></i> Thème 2 : Performance Web, PWA et Conteneurisation</h4>
+                    <h4><i class="fa-solid fa-cubes" aria-hidden="true"></i> Thème 2 : Performance Web, PWA et
+                        Conteneurisation</h4>
                     <ul>
-                        <li><strong>Progressive Web Apps (PWA) :</strong> Nouvelles API des navigateurs pour la gestion avancée du cache et des Services Workers en mode déconnecté.</li>
-                        <li><strong>Conteneurisation (Docker) :</strong> Bonnes pratiques d'écriture de Dockerfiles légers (Multi-stage builds) pour optimiser le déploiement.</li>
-                        <li><strong>PaaS / Déploiement :</strong> Évolution des services de Cloud modernes comme Render et Vercel face aux hébergements traditionnels.</li>
+                        <li><strong>Progressive Web Apps (PWA) :</strong> Nouvelles API des navigateurs pour la gestion
+                            avancée du cache et des Services Workers en mode déconnecté.</li>
+                        <li><strong>Conteneurisation (Docker) :</strong> Bonnes pratiques d'écriture de Dockerfiles
+                            légers (Multi-stage builds) pour optimiser le déploiement.</li>
+                        <li><strong>PaaS / Déploiement :</strong> Évolution des services de Cloud modernes comme Render
+                            et Vercel face aux hébergements traditionnels.</li>
                     </ul>
                 </div>
             </div>
@@ -501,65 +762,67 @@
             <div class="veille-conclusion">
                 <h3>Apports pour ma formation</h3>
                 <p>
-                    Cette veille active m'a permis d'acquérir les connaissances théoriques indispensables à la réalisation de mon application <strong>CodeGrimoire</strong>. Elle me permet d'anticiper les besoins du marché et de choisir des technologies adaptés, performantes et pérennes.
+                    Cette veille active m'a permis d'acquérir les connaissances théoriques indispensables à la
+                    réalisation de mon application <strong>CodeGrimoire</strong>. Elle me permet d'anticiper les besoins
+                    du marché et de choisir des technologies adaptés, performantes et pérennes.
                 </p>
             </div>
         </section>
 
         <!-- CONTACT -->
-        <section id="contact">
+        <section id="contact" class="fade-in-section">
             <p class="section-label">Discutons</p>
             <h2>Contact</h2>
 
             <div class="contact-grid">
                 <div class="contact-info">
-                    <p>Vous pouvez me contacter pour toute demande ou question concernant mes projets ou compétences.</p>
+                    <p>Vous pouvez me contacter pour toute demande ou question concernant mes projets ou compétences.
+                    </p>
                     <ul class="contact-list">
-                        <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:loukakuhl.pro@gmail.com">loukakuhl.pro@gmail.com</a></li>
+                        <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a
+                                href="mailto:loukakuhl.pro@gmail.com">loukakuhl.pro@gmail.com</a></li>
                         <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Perpignan, France</li>
-                        <li><i class="fa-brands fa-github" aria-hidden="true"></i> <a href="[github.com](https://github.com/LoukaKuhl)" target="_blank" rel="noopener">github.com/LoukaKuhl</a></li>
-                        <li><i class="fa-brands fa-linkedin" aria-hidden="true"></i> <a href="[fr.linkedin.com](https://fr.linkedin.com/in/louka-kuhl-b79366385)" target="_blank" rel="noopener">LinkedIn</a></li>
+                        <li><i class="fa-brands fa-github" aria-hidden="true"></i> <a
+                                href="https://github.com/LoukaKuhl" target="_blank"
+                                rel="noopener">github.com/LoukaKuhl</a></li>
+                        <li><i class="fa-brands fa-linkedin" aria-hidden="true"></i> <a
+                                href="https://fr.linkedin.com/in/louka-kuhl-b79366385"
+                                target="_blank" rel="noopener">LinkedIn</a></li>
                     </ul>
                 </div>
 
-                <form action="mailto:loukakuhl.pro@gmail.com" method="post" enctype="text/plain">
+                <form action="https://formspree.io/f/loukakuhl.pro@gmail.com" method="POST" id="contactForm">
                     <label for="name">Nom :</label>
                     <input type="text" id="name" name="name" placeholder="Votre nom" required>
-                    
+
                     <label for="email">Email :</label>
                     <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
-                    
+
                     <label for="message">Message :</label>
                     <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
-                    
-                    <button type="submit" class="btn btn-primary">Envoyer</button>
+
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Envoyer
+                    </button>
+                    <p class="form-success" id="formSuccess" style="display:none;">
+                        <i class="fa-solid fa-circle-check"></i> Message envoyé avec succès !
+                    </p>
                 </form>
             </div>
         </section>
-    </main>
+    
+    <a href="#accueil" class="back-to-top" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+</main>
 
     <footer>
         <p>&copy; 2026 Louka Kuhl. Tous droits réservés.</p>
+        <div class="footer-socials">
+            <a href="https://github.com/LoukaKuhl" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+            <a href="https://fr.linkedin.com/in/louka-kuhl-b79366385" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+            <a href="mailto:loukakuhl.pro@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+        </div>
     </footer>
-
-    <!-- Script JavaScript pour animer le menu burger sur mobile -->
-    <script>
-        const burger = document.getElementById('burger');
-        const navLinks = document.getElementById('navLinks');
-
-        burger.addEventListener('click', () => {
-            const isExpanded = burger.getAttribute('aria-expanded') === 'true';
-            burger.setAttribute('aria-expanded', !isExpanded);
-            navLinks.classList.toggle('active');
-        });
-
-        // Ferme le menu de navigation mobile lorsqu'un lien est cliqué
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                burger.setAttribute('aria-expanded', 'false');
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
