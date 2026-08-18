@@ -149,7 +149,7 @@
         <section id="projet-professionnel" class="fade-in-section">
             <p class="section-label">Mon objectif</p>
             <h2>Projet professionnel</h2>
-            <div class="formation-card">
+            <div class="formation-card projet-professionnel-card">
                 <div class="formation-icon">
                     <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
                 </div>
@@ -496,10 +496,15 @@
                                     <li>Créer un menu permettant de choisir les différents tests.</li>
                                     <li>Étudier les permutations de dictionnaires et de nombres, puis réaliser une recherche exhaustive sur quatre caractères.</li>
                                 </ul>
-                                <p>
+                                                                <p>
                                     Le TP rappelle également que, dans un contexte professionnel, les mots de passe ne doivent pas
                                     être stockés en clair : seules leurs empreintes chiffrées doivent être conservées.
                                 </p>
+                                <h4>Preuve du projet</h4>
+                                <p class="proof-links">
+                                    <a href="assets/preuves/mots-de-passe/verif_mots_de_passe.py" class="btn-projet btn-outline" download>Voir le script Python</a>
+                                </p>
+
                             </div>
                         </details>
                     </div>
@@ -550,10 +555,15 @@
                                     <li>Afficher les combinaisons viables et non viables dans un second scénario.</li>
                                     <li>Créer un menu texte permettant de choisir entre les deux scénarios.</li>
                                 </ul>
-                                <p>
+                                                                <p>
                                     Le TP présente la clé de contrôle comme deux chiffres compris entre 01 et 97 et donne la formule :
                                     <strong>clé de sécurité = 97 - (numéro de sécurité sociale modulo 97)</strong>.
                                 </p>
+                                <h4>Preuve du projet</h4>
+                                <p class="proof-links">
+                                    <a href="assets/preuves/securite-sociale/menu_securite_sociale.py" class="btn-projet btn-outline" download>Voir le script Python</a>
+                                </p>
+
                             </div>
                         </details>
                     </div>
@@ -605,8 +615,29 @@
                                     ignorés dans la modélisation.
                                 </p>
 
+                                                                <h4>Preuves du projet</h4>
+                                <div class="project-proof-gallery">
+                                    <figure class="project-proof">
+                                        <img src="img/preuves/pokemon/pokemon_liste_especes.png" alt="Liste des espèces Pokémon enregistrées dans la base de données" loading="lazy" width="348" height="781">
+                                        <figcaption>Liste des espèces Pokémon enregistrées dans la base de données.</figcaption>
+                                    </figure>
+                                    <figure class="project-proof">
+                                        <img src="img/preuves/pokemon/pokemon_especes_types.png" alt="Espèces Pokémon associées à leurs types dans la base de données" loading="lazy" width="182" height="853">
+                                        <figcaption>Association des espèces Pokémon avec leurs types.</figcaption>
+                                    </figure>
+                                    <figure class="project-proof">
+                                        <img src="img/preuves/pokemon/pokemon_surnoms_especes.png" alt="Correspondance entre les surnoms et les espèces Pokémon" loading="lazy" width="158" height="579">
+                                        <figcaption>Correspondance entre les surnoms et les espèces.</figcaption>
+                                    </figure>
+                                </div>
+                                <p class="proof-links">
+                                    <a href="assets/preuves/pokemon/modele_looping_pokemon_kanto.loo" class="btn-projet btn-outline" download>Modèle Looping</a>
+                                    <a href="assets/preuves/pokemon/rapport_base_donnees_pokemon_kanto.docx" class="btn-projet btn-outline" download>Rapport du projet</a>
+                                </p>
+
                                 <h4>Modélisation et structure</h4>
                                 <p>
+
                                     Le modèle a été réalisé avec Looping, puis décrit sous forme de MLD textuel. Il comprend
                                     notamment les tables <strong>Type_Pokémon</strong>, <strong>Ville</strong>, <strong>Zone</strong>,
                                     <strong>Objet</strong>, <strong>Dresseur</strong>, <strong>Badge</strong>,
@@ -929,7 +960,7 @@
                 <h3>Sujet de ma veille</h3>
                 <p>Thématique principale : <strong>L'écosystème JavaScript Moderne (Back-end &amp; Cloud) et les
                         architectures d'applications décentralisées</strong></p>
-                <p>Ma veille s'articule autour de deux axes stratégiques liés à mes projets de stage :</p>
+                <p>Ma veille s'articule autour de deux axes stratégiques liés à mes projets de stage. Elle me permet de comparer les solutions, de comprendre leurs usages et de justifier mes choix techniques.</p>
             </div>
 
             <div class="veille-themes-grid">
@@ -938,25 +969,55 @@
                         Back-end TypeScript</h4>
                     <ul>
                         <li><strong>TypeScript :</strong> Suivi des mises à jour du langage pour sécuriser le typage des
-                            API (<em>Dev.to / TypeScript Blog</em>).</li>
-                        <li><strong>Frameworks &amp; APIs :</strong> Évolution des performances d'Express et
-                            alternatives émergentes (Fastify, NestJS).</li>
-                        <li><strong>Bases de données BaaS :</strong> L'essor de Supabase et l'intégration des politiques
-                            de sécurité de niveau ligne (RLS) avec PostgreSQL.</li>
+                            API.</li>
+                        <li><strong>Frameworks &amp; APIs :</strong> Comparaison de l'écosystème Express avec des
+                            alternatives comme Fastify et NestJS, notamment sur la validation, la sérialisation et la
+                            structuration des API.</li>
+                        <li><strong>Bases de données BaaS :</strong> Suivi de Supabase et des politiques de sécurité de
+                            niveau ligne (RLS) avec PostgreSQL.</li>
                     </ul>
+                    <div class="veille-synthese">
+                        <h5>Sources consultées et synthèse personnelle</h5>
+                        <p>La documentation officielle de Fastify montre
+                            comment associer TypeScript, des génériques et des schémas JSON afin de mieux typer et
+                            valider les requêtes et réponses d'une API. J'en retiens qu'un framework doit être évalué
+                            autant sur ses performances que sur la qualité de sa validation et de sa maintenabilité.</p>
+                        <p>La documentation Supabase rappelle que la RLS se configure dans PostgreSQL et qu'elle doit être
+                            accompagnée de droits SQL adaptés. Cette lecture renforce l'idée qu'une application full-stack
+                            doit protéger les données au niveau de la base, et pas uniquement dans l'interface.</p>
+                        <p class="veille-sources"><strong>Sources :</strong>
+                            <a href="https://fastify.dev/docs/latest/Reference/TypeScript/" target="_blank" rel="noopener">Fastify — TypeScript</a>
+                            · <a href="https://supabase.com/docs/guides/database/postgres/row-level-security" target="_blank" rel="noopener">Supabase — Row Level Security</a>
+                        </p>
+                    </div>
                 </div>
 
                 <div class="veille-theme">
                     <h4><i class="fa-solid fa-cubes" aria-hidden="true"></i> Thème 2 : Performance Web, PWA et
                         Conteneurisation</h4>
                     <ul>
-                        <li><strong>Progressive Web Apps (PWA) :</strong> Nouvelles API des navigateurs pour la gestion
-                            avancée du cache et des Services Workers en mode déconnecté.</li>
+                        <li><strong>Progressive Web Apps (PWA) :</strong> Suivi du manifeste web, des Services Workers,
+                            du cache et des possibilités de fonctionnement hors connexion.</li>
                         <li><strong>Conteneurisation (Docker) :</strong> Bonnes pratiques d'écriture de Dockerfiles
-                            légers (Multi-stage builds) pour optimiser le déploiement.</li>
-                        <li><strong>PaaS / Déploiement :</strong> Évolution des services de Cloud modernes comme Render
+                            légers grâce aux builds multi-stage pour optimiser le déploiement.</li>
+                        <li><strong>PaaS / Déploiement :</strong> Observation des services Cloud modernes comme Render
                             et Vercel face aux hébergements traditionnels.</li>
                     </ul>
+                    <div class="veille-synthese">
+                        <h5>Sources consultées et synthèse personnelle</h5>
+                        <p>La documentation MDN présente la PWA comme une
+                            application web pouvant être installée, fonctionner avec une connectivité limitée et
+                            utiliser des APIs comme le manifeste et les Services Workers. J'en retiens que la performance
+                            ne concerne pas seulement la vitesse : elle concerne aussi la continuité de l'expérience
+                            utilisateur.</p>
+                        <p>La documentation Docker explique qu'un build multi-stage sépare les étapes de construction et
+                            l'image finale. Les outils de compilation peuvent ainsi rester dans une étape intermédiaire,
+                            ce qui permet de produire une image de production plus légère et plus facile à maintenir.</p>
+                        <p class="veille-sources"><strong>Sources :</strong>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" target="_blank" rel="noopener">MDN — Progressive web apps</a>
+                            · <a href="https://docs.docker.com/build/building/multi-stage/" target="_blank" rel="noopener">Docker Docs — Multi-stage builds</a>
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -965,7 +1026,7 @@
                 <p>
                     Cette veille active m'a permis d'acquérir les connaissances théoriques indispensables à la
                     réalisation de mon application <strong>CodeGrimoire</strong>. Elle me permet d'anticiper les besoins
-                    du marché et de choisir des technologies adaptés, performantes et pérennes.
+                    du marché et de choisir des technologies adaptées, performantes et pérennes.
                 </p>
             </div>
         </section>
